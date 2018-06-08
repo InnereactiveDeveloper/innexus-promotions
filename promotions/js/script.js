@@ -2,7 +2,7 @@
 jQuery(document).ready(function($)
 {
 	
-	console.log('plugin properly enqueued');
+	//console.log('plugin properly enqueued');
 	
 	function online_marker() 
 	{
