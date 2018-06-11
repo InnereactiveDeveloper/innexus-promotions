@@ -94,7 +94,7 @@ acf_add_local_field_group(array(
 			'label' => 'Image Style',
 			'name' => 'q1_image_style',
 			'type' => 'button_group',
-			'instructions' => '',
+			'instructions' => 'Controls whether the content is full width, or held to one side',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -163,7 +163,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -182,7 +182,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -194,6 +194,21 @@ acf_add_local_field_group(array(
 			'append' => '',
 		),
 		array(
+			'key' => 'field_5b1e8ffb738a1',
+			'label' => 'Line 1 Color',
+			'name' => 'q1_line_1_color',
+			'type' => 'color_picker',
+			'instructions' => 'Line 1 color',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
+		),
+		array(
 			'key' => 'field_5a09dd4b1f1bc',
 			'label' => 'Quarter 1 Promotion Line 2',
 			'name' => 'q1_line_2',
@@ -202,7 +217,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -221,7 +236,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -231,6 +246,21 @@ acf_add_local_field_group(array(
 			'step' => '',
 			'prepend' => '',
 			'append' => '',
+		),
+		array(
+			'key' => 'field_5b1e9543a3431',
+			'label' => 'Line 2 Color',
+			'name' => 'q1_line_2_color',
+			'type' => 'color_picker',
+			'instructions' => 'Line 2 color',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
 		),
 		array(
 			'key' => 'field_5a09dd4b1f1bd',
@@ -315,7 +345,7 @@ acf_add_local_field_group(array(
 			'label' => 'Image Style',
 			'name' => 'q2_image_style',
 			'type' => 'button_group',
-			'instructions' => '',
+			'instructions' => 'Controls whether the content is full width, or held to one side',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -384,7 +414,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -403,7 +433,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -415,6 +445,21 @@ acf_add_local_field_group(array(
 			'append' => '',
 		),
 		array(
+			'key' => 'field_5b1e8ffb738a2',
+			'label' => 'Line 1 Color',
+			'name' => 'q2_line_1_color',
+			'type' => 'color_picker',
+			'instructions' => 'Line 1 color',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
+		),
+		array(
 			'key' => 'field_5a09dd4b2f1bc',
 			'label' => 'Quarter 2 Promotion Line 2',
 			'name' => 'q2_line_2',
@@ -423,7 +468,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -442,7 +487,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -452,6 +497,21 @@ acf_add_local_field_group(array(
 			'step' => '',
 			'prepend' => '',
 			'append' => '',
+		),
+		array(
+			'key' => 'field_5b1e9543a3432',
+			'label' => 'Line 2 Color',
+			'name' => 'q2_line_2_color',
+			'type' => 'color_picker',
+			'instructions' => 'Line 2 color',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
 		),
 		array(
 			'key' => 'field_5a09dd4b2f1bd',
@@ -536,7 +596,7 @@ acf_add_local_field_group(array(
 			'label' => 'Image Style',
 			'name' => 'q3_image_style',
 			'type' => 'button_group',
-			'instructions' => '',
+			'instructions' => 'Controls whether the content is full width, or held to one side',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -605,7 +665,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -624,7 +684,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -636,6 +696,21 @@ acf_add_local_field_group(array(
 			'append' => '',
 		),
 		array(
+			'key' => 'field_5b1e8ffb738a3',
+			'label' => 'Line 1 Color',
+			'name' => 'q3_line_1_color',
+			'type' => 'color_picker',
+			'instructions' => 'Line 1 color',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
+		),
+		array(
 			'key' => 'field_5a09dd4b3f1bc',
 			'label' => 'Quarter 3 Promotion Line 2',
 			'name' => 'q3_line_2',
@@ -644,7 +719,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -663,7 +738,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -673,6 +748,21 @@ acf_add_local_field_group(array(
 			'step' => '',
 			'prepend' => '',
 			'append' => '',
+		),
+		array(
+			'key' => 'field_5b1e9543a3433',
+			'label' => 'Line 2 Color',
+			'name' => 'q3_line_2_color',
+			'type' => 'color_picker',
+			'instructions' => 'Line 2 color',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
 		),
 		array(
 			'key' => 'field_5a09dd4b3f1bd',
@@ -757,7 +847,7 @@ acf_add_local_field_group(array(
 			'label' => 'Image Style',
 			'name' => 'q4_image_style',
 			'type' => 'button_group',
-			'instructions' => '',
+			'instructions' => 'Controls whether the content is full width, or held to one side',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -826,7 +916,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -845,7 +935,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -857,6 +947,21 @@ acf_add_local_field_group(array(
 			'append' => '',
 		),
 		array(
+			'key' => 'field_5b1e8ffb738a4',
+			'label' => 'Line 1 Color',
+			'name' => 'q4_line_1_color',
+			'type' => 'color_picker',
+			'instructions' => 'Line 1 color',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
+		),
+		array(
 			'key' => 'field_5a09dd4b4f1bc',
 			'label' => 'Quarter 4 Promotion Line 2',
 			'name' => 'q4_line_2',
@@ -865,7 +970,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -884,7 +989,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -894,6 +999,21 @@ acf_add_local_field_group(array(
 			'step' => '',
 			'prepend' => '',
 			'append' => '',
+		),
+		array(
+			'key' => 'field_5b1e9543a3434',
+			'label' => 'Line 2 Color',
+			'name' => 'q4_line_2_color',
+			'type' => 'color_picker',
+			'instructions' => 'Line 2 color',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
 		),
 		array(
 			'key' => 'field_5a09dd4b4f1bd',
