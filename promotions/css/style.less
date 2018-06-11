@@ -1,0 +1,126 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Frontend CSS
+ * ----------------------------------------------------------------------------
+ */
+ 
+ @display: 'Bevan', cursive;
+ 
+ .transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+
+.innexus-promotion-wrapper
+{
+	a
+	{
+		text-decoration: none;
+		
+		.innexus-promotion-container
+		{
+			position: relative;
+			
+			.innexus-promotion-line-container
+			{
+				
+				.innexus-promotion-line-1
+				{
+					font-family: @display;
+				}
+				
+				.innexus-promotion-line-2
+				{
+				}
+			}
+			
+			>img
+			{
+				
+			}
+		}
+	}
+	
+	.innexus-promotion-line-container
+	{
+		&.position
+		{
+			z-index: 1;
+			position: absolute;
+			
+			&.top-left
+			{
+				left: 20px;
+				right: 20px;
+				top: 20px;
+			}
+			
+			&.middle-left
+			{
+				left: 20px;
+				right: 20px;
+				top: 50%;
+				.transform(translateY(-50%));
+			}
+			
+			&.bottom-left
+			{
+				left: 20px;
+				right: 20px;
+				bottom: 20px;
+			}
+			
+			&.top-right
+			{
+				right: 20px;
+				left: 20px;
+				top: 20px;
+				text-align: right;
+			}
+			
+			&.middle-right
+			{
+				right: 20px;
+				left: 20px;
+				top: 50%;
+				.transform(translateY(-50%));
+				text-align: right;
+			}
+			
+			&.bottom-right
+			{
+				right: 20px;
+				left: 20px;
+				bottom: 20px;
+				text-align: right;
+			}
+			
+		}
+		
+		&.rectangle
+		{
+			&.top-left,
+			&.middle-left,
+			&.bottom-left,
+			{
+				right: 50%;
+			}
+			
+			&.top-right,
+			&.middle-right,
+			&.bottom-right,
+			{
+				left: 50%;
+			}
+		}
+	}
+	
+	
+	.innexus-promotion-extended-content
+	{
+		
+	}
+}

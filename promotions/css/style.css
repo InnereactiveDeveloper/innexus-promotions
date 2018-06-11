@@ -3,69 +3,69 @@
  * Frontend CSS
  * ----------------------------------------------------------------------------
  */
-
-.wp-block-innexus-profile-block ul,
-.wp-block-innexus-profile-block li {
-	list-style: none;
-	margin: 0; padding: 0;
+.innexus-promotion-wrapper a {
+  text-decoration: none;
 }
-.wp-block-innexus-profile-block {
-	display: flex;
-	align-items: stretch;
-	background-color: #ffffff;
-	margin: 12px 0px;
-	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+.innexus-promotion-wrapper a .innexus-promotion-container {
+  position: relative;
 }
-.wp-block-innexus-profile-block .innexus-profile-image {
-	display: flex;
-	align-items: center;
-	background-size: cover;
-	background-position: center;
-	width: 60%;
+.innexus-promotion-wrapper a .innexus-promotion-container .innexus-promotion-line-container .innexus-promotion-line-1 {
+  font-family: 'Bevan', cursive;
 }
-.wp-block-innexus-profile-block .innexus-profile-image img {
-	opacity: 0;
-	margin: -9999px;
+.innexus-promotion-wrapper .innexus-promotion-line-container.position {
+  z-index: 1;
+  position: absolute;
 }
-.wp-block-innexus-profile-block .innexus-profile-content {
-	width: 100%;
-	align-self: center;
-	padding: 18px;
-	box-sizing: border-box;
+.innexus-promotion-wrapper .innexus-promotion-line-container.position.top-left {
+  left: 20px;
+  right: 20px;
+  top: 20px;
 }
-.wp-block-innexus-profile-block .innexus-profile-content h3 {
-	margin: 0px;
-	padding: 0px;
+.innexus-promotion-wrapper .innexus-promotion-line-container.position.middle-left {
+  left: 20px;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
-.wp-block-innexus-profile-block .innexus-profile-content h5 {
-	color: rgba(0, 0, 0, 0.4);
-	text-transform: uppercase;
-	margin: 0px;
-	padding: 8px 0px;
+.innexus-promotion-wrapper .innexus-promotion-line-container.position.bottom-left {
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
 }
-.wp-block-innexus-profile-block .innexus-profile-content p {
-	line-height: 1.6;
-	margin: 0px;
-	padding: 8px 0px;
+.innexus-promotion-wrapper .innexus-promotion-line-container.position.top-right {
+  right: 20px;
+  left: 20px;
+  top: 20px;
+  text-align: right;
 }
-.wp-block-innexus-profile-block .innexus-profile-social {
-	padding-top: 12px;
+.innexus-promotion-wrapper .innexus-promotion-line-container.position.middle-right {
+  right: 20px;
+  left: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: right;
 }
-.wp-block-innexus-profile-block .innexus-profile-social:empty {
-	display: none;
+.innexus-promotion-wrapper .innexus-promotion-line-container.position.bottom-right {
+  right: 20px;
+  left: 20px;
+  bottom: 20px;
+  text-align: right;
 }
-.wp-block-innexus-profile-block .innexus-profile-social .social-link {
-	color: rgba(0, 0, 0, 0.24);
-	padding: 6px 12px;
-	font-size: 18px;
-	text-decoration: none;
-	border-left: 1px solid rgba(0, 0, 0, 0.12);
-	border-bottom: none;
-	box-shadow: none;
+.innexus-promotion-wrapper .innexus-promotion-line-container.rectangle.top-left,
+.innexus-promotion-wrapper .innexus-promotion-line-container.rectangle.middle-left,
+.innexus-promotion-wrapper .innexus-promotion-line-container.rectangle.bottom-left {
+  right: 50%;
 }
-.wp-block-innexus-profile-block .innexus-profile-social .social-link:hover {
-	color: rgba(0, 0, 0, 1);
-}
-.wp-block-innexus-profile-block .innexus-profile-social .social-link:first-child {
-	border: none;
+.innexus-promotion-wrapper .innexus-promotion-line-container.rectangle.top-right,
+.innexus-promotion-wrapper .innexus-promotion-line-container.rectangle.middle-right,
+.innexus-promotion-wrapper .innexus-promotion-line-container.rectangle.bottom-right {
+  left: 50%;
 }

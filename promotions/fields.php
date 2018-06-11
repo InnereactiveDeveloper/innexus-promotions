@@ -64,6 +64,54 @@ acf_add_local_field_group(array(
 			'esc_html' => 0,
 		),
 		array(
+			'key' => 'field_5b1e7eb40215b',
+			'label' => 'Text Position',
+			'name' => 'q1_text_position',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'top-left' => 'Top Left',
+				'middle-left' => 'Middle Left',
+				'bottom-left' => 'Bottom Left',
+				'top-right' => 'Top Right',
+				'middle-right' => 'Middle Right',
+				'bottom-right' => 'Bottom Right',
+			),
+			'allow_null' => 0,
+			'default_value' => 'middle-left',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_5b1e7fbf0215c',
+			'label' => 'Image Style',
+			'name' => 'q1_image_style',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'rectangle' => 'Rectangle',
+				'square' => 'Square',
+			),
+			'allow_null' => 0,
+			'default_value' => 'square',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
 			'key' => 'field_5a09dd051f1ba',
 			'label' => 'Quarter 1 Promotion Image',
 			'name' => 'q1_image',
@@ -126,6 +174,26 @@ acf_add_local_field_group(array(
 			'delay' => 0,
 		),
 		array(
+			'key' => 'field_5b1e8ffb738ad',
+			'label' => 'Line 1 Size',
+			'name' => 'q1_line_1_size',
+			'type' => 'range',
+			'instructions' => 'Font size for line 1',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 30,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
 			'key' => 'field_5a09dd4b1f1bc',
 			'label' => 'Quarter 1 Promotion Line 2',
 			'name' => 'q1_line_2',
@@ -143,6 +211,26 @@ acf_add_local_field_group(array(
 			'toolbar' => 'full',
 			'media_upload' => 1,
 			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5b1e9033738ae',
+			'label' => 'Line 2 Size',
+			'name' => 'q1_line_2_size',
+			'type' => 'range',
+			'instructions' => 'Font size for line 2',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 18,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
 		),
 		array(
 			'key' => 'field_5a09dd4b1f1bd',
@@ -195,6 +283,54 @@ acf_add_local_field_group(array(
 			'message' => 'Will display during April, May, and June.',
 			'new_lines' => '',
 			'esc_html' => 0,
+		),
+		array(
+			'key' => 'field_5b1e7eb40225b',
+			'label' => 'Text Position',
+			'name' => 'q2_text_position',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'top-left' => 'Top Left',
+				'middle-left' => 'Middle Left',
+				'bottom-left' => 'Bottom Left',
+				'top-right' => 'Top Right',
+				'middle-right' => 'Middle Right',
+				'bottom-right' => 'Bottom Right',
+			),
+			'allow_null' => 0,
+			'default_value' => 'middle-left',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_5b1e7fbf0225c',
+			'label' => 'Image Style',
+			'name' => 'q2_image_style',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'rectangle' => 'Rectangle',
+				'square' => 'Square',
+			),
+			'allow_null' => 0,
+			'default_value' => 'square',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
 		),
 		array(
 			'key' => 'field_5a09ddb41f1bf',
@@ -259,6 +395,26 @@ acf_add_local_field_group(array(
 			'delay' => 0,
 		),
 		array(
+			'key' => 'field_5b2e8ffb738ad',
+			'label' => 'Line 1 Size',
+			'name' => 'q2_line_1_size',
+			'type' => 'range',
+			'instructions' => 'Font size for line 1',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 30,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
 			'key' => 'field_5a09dd4b2f1bc',
 			'label' => 'Quarter 2 Promotion Line 2',
 			'name' => 'q2_line_2',
@@ -276,6 +432,26 @@ acf_add_local_field_group(array(
 			'toolbar' => 'full',
 			'media_upload' => 1,
 			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5b2e9033738ae',
+			'label' => 'Line 2 Size',
+			'name' => 'q2_line_2_size',
+			'type' => 'range',
+			'instructions' => 'Font size for line 2',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 18,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
 		),
 		array(
 			'key' => 'field_5a09dd4b2f1bd',
@@ -328,6 +504,54 @@ acf_add_local_field_group(array(
 			'message' => 'Will display during July, August, and September.',
 			'new_lines' => '',
 			'esc_html' => 0,
+		),
+		array(
+			'key' => 'field_5b1e7eb40235b',
+			'label' => 'Text Position',
+			'name' => 'q3_text_position',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'top-left' => 'Top Left',
+				'middle-left' => 'Middle Left',
+				'bottom-left' => 'Bottom Left',
+				'top-right' => 'Top Right',
+				'middle-right' => 'Middle Right',
+				'bottom-right' => 'Bottom Right',
+			),
+			'allow_null' => 0,
+			'default_value' => 'middle-left',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_5b1e7fbf0235c',
+			'label' => 'Image Style',
+			'name' => 'q3_image_style',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'rectangle' => 'Rectangle',
+				'square' => 'Square',
+			),
+			'allow_null' => 0,
+			'default_value' => 'square',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
 		),
 		array(
 			'key' => 'field_5a09df881f1c4',
@@ -392,6 +616,26 @@ acf_add_local_field_group(array(
 			'delay' => 0,
 		),
 		array(
+			'key' => 'field_5b3e8ffb738ad',
+			'label' => 'Line 1 Size',
+			'name' => 'q3_line_1_size',
+			'type' => 'range',
+			'instructions' => 'Font size for line 1',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 30,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
 			'key' => 'field_5a09dd4b3f1bc',
 			'label' => 'Quarter 3 Promotion Line 2',
 			'name' => 'q3_line_2',
@@ -409,6 +653,26 @@ acf_add_local_field_group(array(
 			'toolbar' => 'full',
 			'media_upload' => 1,
 			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5b3e9033738ae',
+			'label' => 'Line 2 Size',
+			'name' => 'q3_line_2_size',
+			'type' => 'range',
+			'instructions' => 'Font size for line 2',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 18,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
 		),
 		array(
 			'key' => 'field_5a09dd4b3f1bd',
@@ -461,6 +725,54 @@ acf_add_local_field_group(array(
 			'message' => 'Will display during October, November, and December.',
 			'new_lines' => '',
 			'esc_html' => 0,
+		),
+		array(
+			'key' => 'field_5b1e7eb40245b',
+			'label' => 'Text Position',
+			'name' => 'q4_text_position',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'top-left' => 'Top Left',
+				'middle-left' => 'Middle Left',
+				'bottom-left' => 'Bottom Left',
+				'top-right' => 'Top Right',
+				'middle-right' => 'Middle Right',
+				'bottom-right' => 'Bottom Right',
+			),
+			'allow_null' => 0,
+			'default_value' => 'middle-left',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_5b1e7fbf0245c',
+			'label' => 'Image Style',
+			'name' => 'q4_image_style',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'rectangle' => 'Rectangle',
+				'square' => 'Square',
+			),
+			'allow_null' => 0,
+			'default_value' => 'rectangle',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
 		),
 		array(
 			'key' => 'field_5a09dfa81f1c7',
@@ -525,6 +837,26 @@ acf_add_local_field_group(array(
 			'delay' => 0,
 		),
 		array(
+			'key' => 'field_5b4e8ffb738ad',
+			'label' => 'Line 1 Size',
+			'name' => 'q4_line_1_size',
+			'type' => 'range',
+			'instructions' => 'Font size for line 1',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 30,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
 			'key' => 'field_5a09dd4b4f1bc',
 			'label' => 'Quarter 4 Promotion Line 2',
 			'name' => 'q4_line_2',
@@ -542,6 +874,26 @@ acf_add_local_field_group(array(
 			'toolbar' => 'full',
 			'media_upload' => 1,
 			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5b4e9033738ae',
+			'label' => 'Line 2 Size',
+			'name' => 'q4_line_2_size',
+			'type' => 'range',
+			'instructions' => 'Font size for line 2',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 18,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
 		),
 		array(
 			'key' => 'field_5a09dd4b4f1bd',
@@ -593,15 +945,6 @@ if( function_exists('acf_add_local_field_group') )
 		$date = date('n');
 		$q = '';
 		
-		if(!empty($type))
-		{
-			$type = $type;
-		}
-		else
-		{
-			$type = 'wide';
-		}
-		
 		//Determine Which quarter we're in
 		if($date == 1 || $date == 2 || $date == 3)
 		{
@@ -624,26 +967,30 @@ if( function_exists('acf_add_local_field_group') )
 			echo 'You broke something. How did you get here?';
 		}
 		
-		$image 		= get_field($q . '_image', 'option');
-		$image 		= $image['sizes']['large'];
-		$line1 		= get_field($q . '_line_1', 'option');
-		$line2 		= get_field($q . '_line_2', 'option');
-		$content 	= get_field($q . '_extended_content', 'option');
-		$link 		= get_field($q . '_link', 'option');
+		$text_position 	= 'position ' . get_field($q . '_text_position', 'option');
+		$image_style 	= get_field($q . '_image_style', 'option');
+		$image 			= get_field($q . '_image', 'option');
+		$image 			= $image['sizes']['large'];
+		$line1 			= get_field($q . '_line_1', 'option');
+		$line1_size 	= get_field($q . '_line_1_size', 'option');
+		$line2 			= get_field($q . '_line_2', 'option');
+		$line2_size 	= get_field($q . '_line_2_size', 'option');
+		$content 		= get_field($q . '_extended_content', 'option');
+		$link 			= get_field($q . '_link', 'option');
 	
-		echo '<div class="innexus-promotion-wrapper '.$type.'">';
+		echo '<div class="innexus-promotion-wrapper">';
 			
 			//Wrap the full promotion in a link
 			echo '<a href="'.$link.'">';
 				echo '<div class="innexus-promotion-container">';
 					
 					//Keep the lines wrapped so we can easily shift the content around
-					echo '<div class="innexus-promotion-line-container">';
-						echo '<div class="innexus-promotion-line-1">'.$line1.'</div>';
-						echo '<div class="innexus-promotion-line-2">'.$line2.'</div>';
+					echo '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
+						echo '<div class="innexus-promotion-line-1" style="font-size:'.$line1_size.'px;">'.$line1.'</div>';
+						echo '<div class="innexus-promotion-line-2" style="font-size:'.$line2_size.'px;">'.$line2.'</div>';
 					echo '</div>';
 					
-					echo '<img src=" '.$image.'" title="'.$line1.' alt="'.$line1.'"/>';
+					echo '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
 				echo '</div>';
 			echo '</a>';
 			
