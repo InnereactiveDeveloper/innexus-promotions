@@ -2,7 +2,7 @@
 Contributors: joshglovak, getinnexus
 Donate link: https://getinnexus.com
 Tags: acf
-Stable tag: 1.02
+Stable tag: 1.03
 Requires at least: 4.8
 Tested up to: 4.9.1
 License: GPLv2 or later
