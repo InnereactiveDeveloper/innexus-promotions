@@ -10,7 +10,7 @@
  * Description: Innexus Promotions functionality, allowing auto-cycling of quarterly promotions
  * Author: Innexus by Innereactive
  * Author URI: https://getinnexus.com
- * Version: 1.03
+ * Version: 1.04
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
