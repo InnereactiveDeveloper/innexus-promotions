@@ -8,11 +8,11 @@ Tested up to: 4.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Organic Profile Block is a custom block for the Gutenberg editor. It displays author and staff biographies with an image and social media links.
+The Innexus Promotions Module is intended for use with the Innexus website program.
 
 == Description ==
 
-The Innexus Promotions Module is intended for use with the Innexus website program.
+Adds [promotions] and the relevant interface for controlling quarterly promotions content and appearance.
 
 = 1.0.0 =
 * Initial plugin release
