@@ -10,7 +10,7 @@
  * Description: Innexus Promotions functionality, allowing auto-cycling of quarterly promotions
  * Author: Innexus by Innereactive
  * Author URI: https://getinnexus.com
- * Version: 1.04
+ * Version: 1.05
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -45,8 +45,8 @@ if ( ! defined( 'XPRO_URL' ) ) {
 /**
  * Promotions
  */
-require_once( XPRO_DIR . '/promotions/index.php' );
 require_once( XPRO_DIR . '/promotions/fields.php' );
+require_once( XPRO_DIR . '/promotions/index.php' );
 require_once( XPRO_DIR . '/distribute/BFIGitHubPluginUploader.php' );
 if ( is_admin() ) {
     new BFIGitHubPluginUpdater( __FILE__, 'InnereactiveDeveloper', "innexus-promotions" );

@@ -1093,14 +1093,21 @@ if( function_exists('acf_add_local_field_group') )
 		$image 			= $image['sizes']['large'];
 		$line1 			= get_field($q . '_line_1', 'option');
 		$line1_size 	= get_field($q . '_line_1_size', 'option');
+		$line1_size_m 	= $line1_size - 10;
 		$line1_color 	= get_field($q . '_line_1_color', 'option');
 		$line2 			= get_field($q . '_line_2', 'option');
 		$line2_size 	= get_field($q . '_line_2_size', 'option');
 		$line2_color 	= get_field($q . '_line_2_color', 'option');
 		$content 		= get_field($q . '_extended_content', 'option');
 		$link 			= get_field($q . '_link', 'option');
+		$placeholder 	= '';
+		
+		if(empty($image))
+		{
+			$placeholder = ' placeholder';
+		}
 	
-		echo '<div class="innexus-promotion-wrapper">';
+		echo '<div class="innexus-promotion-wrapper'.$placeholder.'">';
 			
 			//Wrap the full promotion in a link
 			echo '<a href="'.$link.'">';
@@ -1108,11 +1115,15 @@ if( function_exists('acf_add_local_field_group') )
 					
 					//Keep the lines wrapped so we can easily shift the content around
 					echo '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
-						echo '<div class="innexus-promotion-line-1" style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</div>';
+						echo '<div class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</div>';
 						echo '<div class="innexus-promotion-line-2" style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
 					echo '</div>';
 					
-					echo '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
+					if(!empty($image))
+					{
+						echo '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
+					}
+					
 				echo '</div>';
 			echo '</a>';
 			
