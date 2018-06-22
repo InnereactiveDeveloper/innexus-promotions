@@ -10,7 +10,8 @@
   position: relative;
 }
 .innexus-promotion-wrapper a .innexus-promotion-container .innexus-promotion-line-container .innexus-promotion-line-1 {
-  font-family: 'Bevan', cursive;
+  margin: 0;
+  margin-bottom: 10px;
 }
 .innexus-promotion-wrapper .innexus-promotion-line-container.position {
   z-index: 1;

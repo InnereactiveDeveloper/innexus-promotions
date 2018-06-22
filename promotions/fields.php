@@ -1115,7 +1115,7 @@ if( function_exists('acf_add_local_field_group') )
 					
 					//Keep the lines wrapped so we can easily shift the content around
 					echo '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
-						echo '<div class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</div>';
+						echo '<h3 class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</h3>';
 						echo '<div class="innexus-promotion-line-2" style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
 					echo '</div>';
 					
