@@ -13,6 +13,11 @@
   margin: 0;
   margin-bottom: 10px;
 }
+.innexus-promotion-wrapper a .innexus-promotion-container > img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
 .innexus-promotion-wrapper .innexus-promotion-line-container.position {
   z-index: 1;
   position: absolute;
