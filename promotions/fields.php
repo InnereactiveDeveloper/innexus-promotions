@@ -1106,32 +1106,36 @@ if( function_exists('acf_add_local_field_group') )
 		{
 			$placeholder = ' placeholder';
 		}
+		
+		$promotion_output = '';
 	
-		echo '<div class="innexus-promotion-wrapper'.$placeholder.'">';
+		$promotion_output .= '<div class="innexus-promotion-wrapper'.$placeholder.'">';
 			
 			//Wrap the full promotion in a link
-			echo '<a href="'.$link.'">';
-				echo '<div class="innexus-promotion-container">';
+			$promotion_output .= '<a href="'.$link.'">';
+				$promotion_output .= '<div class="innexus-promotion-container">';
 					
 					//Keep the lines wrapped so we can easily shift the content around
-					echo '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
-						echo '<h3 class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</h3>';
-						echo '<div class="innexus-promotion-line-2" style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
-					echo '</div>';
+					$promotion_output .= '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
+						$promotion_output .= '<h3 class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</h3>';
+						$promotion_output .= '<div class="innexus-promotion-line-2" style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
+					$promotion_output .= '</div>';
 					
 					if(!empty($image))
 					{
-						echo '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
+						$promotion_output .= '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
 					}
 					
-				echo '</div>';
-			echo '</a>';
+				$promotion_output .= '</div>';
+			$promotion_output .= '</a>';
 			
 			//Keep extended content below the promotion
-			echo '<div class="innexus-promotion-extended-content">';
-				echo $content;
-			echo '</div>';
-		echo '</div>';
+			$promotion_output .= '<div class="innexus-promotion-extended-content">';
+				$promotion_output .= $content;
+			$promotion_output .= '</div>';
+		$promotion_output .= '</div>';
+		
+		return $promotion_output;
 	}
 	
 	add_shortcode( 'promotions', 'promotions_func' );
