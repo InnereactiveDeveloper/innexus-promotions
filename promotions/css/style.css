@@ -75,6 +75,9 @@
 .innexus-promotion-wrapper .innexus-promotion-line-container.rectangle.bottom-right {
   left: 50%;
 }
+.innexus-promotion-wrapper .innexus-promotion-extended-content {
+  padding: 5px;
+}
 .innexus-promotion-wrapper.placeholder a .innexus-promotion-container {
   min-height: 300px;
   display: block;
