@@ -1097,6 +1097,7 @@ if( function_exists('acf_add_local_field_group') )
 		$line1_color 	= get_field($q . '_line_1_color', 'option');
 		$line2 			= get_field($q . '_line_2', 'option');
 		$line2_size 	= get_field($q . '_line_2_size', 'option');
+		$line2_size_m 	= $line2_size - 7;
 		$line2_color 	= get_field($q . '_line_2_color', 'option');
 		$content 		= get_field($q . '_extended_content', 'option');
 		$link 			= get_field($q . '_link', 'option');
@@ -1118,7 +1119,7 @@ if( function_exists('acf_add_local_field_group') )
 					//Keep the lines wrapped so we can easily shift the content around
 					$promotion_output .= '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
 						$promotion_output .= '<h3 class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</h3>';
-						$promotion_output .= '<div class="innexus-promotion-line-2" style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
+						$promotion_output .= '<div class="innexus-promotion-line-2" data-desktop="'.$line2_size.'" data-mobile='.$line2_size_m.' style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
 					$promotion_output .= '</div>';
 					
 					if(!empty($image))
