@@ -2,7 +2,7 @@
 Contributors: joshglovak, getinnexus
 Donate link: https://getinnexus.com
 Tags: acf
-Stable tag: 1.03
+Stable tag: 1.05
 Requires at least: 4.8
 Tested up to: 4.9.1
 License: GPLv2 or later
@@ -15,6 +15,9 @@ The Innexus Promotions Module is intended for use with the Innexus website progr
 Adds [promotions] and the relevant interface for controlling quarterly promotions content and appearance.
 
 == Changelog ==
+
+= 1.05 =
+* NG+
 
 = 1.02 =
 * Controls and Tweaking
