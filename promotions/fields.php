@@ -202,6 +202,28 @@ acf_add_local_field_group(array(
 			'maxlength' => '',
 		),
 		array(
+			'key' => 'field_5b111eb40245b',
+			'label' => 'Link Target',
+			'name' => 'q1_link_target',
+			'type' => 'button_group',
+			'instructions' => 'Controls whether the link opens in a new tab, or the current tab',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'current' => 'Current',
+				'new' => 'New'
+			),
+			'allow_null' => 0,
+			'default_value' => 'current',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
 			'key' => 'field_5a09dd4b1f1bb',
 			'label' => 'Quarter 1 Promotion Line 1',
 			'name' => 'q1_line_1',
@@ -451,6 +473,28 @@ acf_add_local_field_group(array(
 			'prepend' => '',
 			'append' => '',
 			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5b2e1eb40245b',
+			'label' => 'Link Target',
+			'name' => 'q2_link_target',
+			'type' => 'button_group',
+			'instructions' => 'Controls whether the link opens in a new tab, or the current tab',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'current' => 'Current',
+				'new' => 'New'
+			),
+			'allow_null' => 0,
+			'default_value' => 'current',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
 		),
 		array(
 			'key' => 'field_5a09dd4b2f1bb',
@@ -704,6 +748,28 @@ acf_add_local_field_group(array(
 			'maxlength' => '',
 		),
 		array(
+			'key' => 'field_5b3e1eb40245b',
+			'label' => 'Link Target',
+			'name' => 'q3_link_target',
+			'type' => 'button_group',
+			'instructions' => 'Controls whether the link opens in a new tab, or the current tab',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'current' => 'Current',
+				'new' => 'New'
+			),
+			'allow_null' => 0,
+			'default_value' => 'current',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
 			'key' => 'field_5a09dd4b3f1bb',
 			'label' => 'Quarter 3 Promotion Line 1',
 			'name' => 'q3_line_1',
@@ -955,6 +1021,28 @@ acf_add_local_field_group(array(
 			'maxlength' => '',
 		),
 		array(
+			'key' => 'field_5b4e1eb40245b',
+			'label' => 'Link Target',
+			'name' => 'q4_link_target',
+			'type' => 'button_group',
+			'instructions' => 'Controls whether the link opens in a new tab, or the current tab',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'current' => 'Current',
+				'new' => 'New'
+			),
+			'allow_null' => 0,
+			'default_value' => 'current',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
 			'key' => 'field_5a09dd4b4f1bb',
 			'label' => 'Quarter 4 Promotion Line 1',
 			'name' => 'q4_line_1',
@@ -1108,7 +1196,7 @@ if( function_exists('acf_add_local_field_group') )
 {
 	function promotions_func( $atts, $content = "" ) 
 	{
-		//store our incoming variable, default to 0 if nothing is set
+		//fetch the current month
 		$date = date('n');
 		$q = '';
 		
@@ -1136,12 +1224,14 @@ if( function_exists('acf_add_local_field_group') )
 		
 		//Force Quarter Override
 		$quarter_control = get_field('force_quarter', 'option');
+		
+		//Check if the override is active
 		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4')
 		{
 			$q = $quarter_control;
-			pre($quarter_control);
 		}
 		
+		//Content Settings
 		$text_position 	= 'position ' . get_field($q . '_text_position', 'option');
 		$image_style 	= get_field($q . '_image_style', 'option');
 		$image 			= get_field($q . '_image', 'option');
