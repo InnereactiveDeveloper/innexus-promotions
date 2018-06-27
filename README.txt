@@ -2,17 +2,22 @@
 Contributors: joshglovak, getinnexus
 Donate link: https://getinnexus.com
 Tags: acf
-Stable tag: 1.05.02
+Stable tag: 1.05.03
 Requires at least: 4.8
-Tested up to: 4.9.1
+Tested up to: 4.9.6
 
 The Innexus Promotions Module is intended for use with the Innexus website program.
 
 == Description ==
 
 Adds [promotions] and the relevant interface for controlling quarterly promotions content and appearance.
+Requires ACF Pro to function.
 
 == Changelog ==
+
+= 1.05.03 =
+* Added Override for Quarters
+* Added Link target control
 
 = 1.05 =
 * NG+
