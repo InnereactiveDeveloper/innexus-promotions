@@ -31,6 +31,53 @@ acf_add_local_field_group(array(
 	'title' => 'Promotions',
 	'fields' => array(
 		array(
+			'key' => 'field_5a09fd6e1f1bd',
+			'label' => 'Universal Settings',
+			'name' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'left',
+			'endpoint' => 0,
+		),
+		array(
+			'key' => 'field_5b1eueb40215b',
+			'label' => 'Force Quarter',
+			'name' => 'force_quarter',
+			'type' => 'button_group',
+			'instructions' => 
+				'Forces a quarter to be active regardless of the current date to allow for review of placed promotions.
+				<br> Q1 - Jan, Feb, Mar. 
+				<br> Q2 - Apr, May, Jun. 
+				<br> Q3 - Jul, Aug, Sep. 
+				<br> Q4 - Oct, Nov, Dec. 
+				<br> ALWAYS set this toggle back to None when done testing!',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'none' => 'None',
+				'q1' => 'Q1',
+				'q2' => 'Q2',
+				'q3' => 'Q3',
+				'q4' => 'Q4',
+			),
+			'allow_null' => 0,
+			'default_value' => 'none',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
 			'key' => 'field_5a09dd6e1f1bd',
 			'label' => 'Quarter 1',
 			'name' => '',
@@ -107,7 +154,7 @@ acf_add_local_field_group(array(
 				'square' => 'Square',
 			),
 			'allow_null' => 0,
-			'default_value' => 'square',
+			'default_value' => 'rectangle',
 			'layout' => 'horizontal',
 			'return_format' => 'value',
 		),
@@ -358,7 +405,7 @@ acf_add_local_field_group(array(
 				'square' => 'Square',
 			),
 			'allow_null' => 0,
-			'default_value' => 'square',
+			'default_value' => 'rectangle',
 			'layout' => 'horizontal',
 			'return_format' => 'value',
 		),
@@ -609,7 +656,7 @@ acf_add_local_field_group(array(
 				'square' => 'Square',
 			),
 			'allow_null' => 0,
-			'default_value' => 'square',
+			'default_value' => 'rectangle',
 			'layout' => 'horizontal',
 			'return_format' => 'value',
 		),
