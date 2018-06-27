@@ -1134,6 +1134,14 @@ if( function_exists('acf_add_local_field_group') )
 			echo 'You broke something. How did you get here?';
 		}
 		
+		//Force Quarter Override
+		$quarter_control = get_field('force_quarter', 'option');
+		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4')
+		{
+			$q = $quarter_control;
+			pre($quarter_control);
+		}
+		
 		$text_position 	= 'position ' . get_field($q . '_text_position', 'option');
 		$image_style 	= get_field($q . '_image_style', 'option');
 		$image 			= get_field($q . '_image', 'option');
@@ -1155,6 +1163,7 @@ if( function_exists('acf_add_local_field_group') )
 			$placeholder = ' placeholder';
 		}
 		
+		//Blank Promotion Output
 		$promotion_output = '';
 	
 		$promotion_output .= '<div class="innexus-promotion-wrapper'.$placeholder.'">';
@@ -1183,6 +1192,7 @@ if( function_exists('acf_add_local_field_group') )
 			$promotion_output .= '</div>';
 		$promotion_output .= '</div>';
 		
+		//Return the assembled promotion
 		return $promotion_output;
 	}
 	
