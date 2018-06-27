@@ -1246,11 +1246,19 @@ if( function_exists('acf_add_local_field_group') )
 		$line2_color 	= get_field($q . '_line_2_color', 'option');
 		$content 		= get_field($q . '_extended_content', 'option');
 		$link 			= get_field($q . '_link', 'option');
+		$link_target 	= get_field($q . '_link_target', 'option');
 		$placeholder 	= '';
+		$link_target_output = '';
 		
+		//If there's no image, load the placeholder class to assist in blind placing of the shortcode
 		if(empty($image))
 		{
 			$placeholder = ' placeholder';
+		}
+		
+		if($link_target == 'new')
+		{
+			$link_target_output = 'target="_blank"';
 		}
 		
 		//Blank Promotion Output
@@ -1259,7 +1267,7 @@ if( function_exists('acf_add_local_field_group') )
 		$promotion_output .= '<div class="innexus-promotion-wrapper'.$placeholder.'">';
 			
 			//Wrap the full promotion in a link
-			$promotion_output .= '<a href="'.$link.'">';
+			$promotion_output .= '<a href="'.$link.'" '. $link_target_output .'>';
 				$promotion_output .= '<div class="innexus-promotion-container">';
 					
 					//Keep the lines wrapped so we can easily shift the content around
