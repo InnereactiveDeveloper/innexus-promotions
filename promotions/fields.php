@@ -53,11 +53,13 @@ acf_add_local_field_group(array(
 			'type' => 'button_group',
 			'instructions' => 
 				'Forces a quarter to be active regardless of the current date to allow for review of placed promotions.
+				<br>
 				<br> Q1 - Jan, Feb, Mar. 
 				<br> Q2 - Apr, May, Jun. 
 				<br> Q3 - Jul, Aug, Sep. 
 				<br> Q4 - Oct, Nov, Dec. 
-				<br> ALWAYS set this toggle back to None when done testing!',
+				<br>
+				<br> ALWAYS set this toggle back to <strong>Auto</strong> when done testing!',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -66,7 +68,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
-				'none' => 'None',
+				'auto' => 'Auto',
 				'q1' => 'Q1',
 				'q2' => 'Q2',
 				'q3' => 'Q3',
@@ -1263,7 +1265,8 @@ if( function_exists('acf_add_local_field_group') )
 		
 		//Blank Promotion Output
 		$promotion_output = '';
-	
+		
+		//Promotion Wrapper
 		$promotion_output .= '<div class="innexus-promotion-wrapper'.$placeholder.'">';
 			
 			//Wrap the full promotion in a link
@@ -1276,6 +1279,7 @@ if( function_exists('acf_add_local_field_group') )
 						$promotion_output .= '<div class="innexus-promotion-line-2" data-desktop="'.$line2_size.'" data-mobile='.$line2_size_m.' style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
 					$promotion_output .= '</div>';
 					
+					//Only output img tag if there is an image mapped
 					if(!empty($image))
 					{
 						$promotion_output .= '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
@@ -1288,6 +1292,8 @@ if( function_exists('acf_add_local_field_group') )
 			$promotion_output .= '<div class="innexus-promotion-extended-content">';
 				$promotion_output .= $content;
 			$promotion_output .= '</div>';
+			
+		//Close Promotion Wrapper
 		$promotion_output .= '</div>';
 		
 		//Return the assembled promotion
