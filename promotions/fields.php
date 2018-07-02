@@ -1275,8 +1275,19 @@ if( function_exists('acf_add_local_field_group') )
 					
 					//Keep the lines wrapped so we can easily shift the content around
 					$promotion_output .= '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
-						$promotion_output .= '<h3 class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</h3>';
-						$promotion_output .= '<div class="innexus-promotion-line-2" data-desktop="'.$line2_size.'" data-mobile='.$line2_size_m.' style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
+						
+						//If Line 1 has content
+						if(!empty($line1))
+						{
+							$promotion_output .= '<h3 class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</h3>';
+						}
+						
+						//If Line 2 has content
+						if(!empty($line2))
+						{
+							$promotion_output .= '<div class="innexus-promotion-line-2" data-desktop="'.$line2_size.'" data-mobile='.$line2_size_m.' style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
+						}
+					
 					$promotion_output .= '</div>';
 					
 					//Only output img tag if there is an image mapped
@@ -1289,9 +1300,13 @@ if( function_exists('acf_add_local_field_group') )
 			$promotion_output .= '</a>';
 			
 			//Keep extended content below the promotion
-			$promotion_output .= '<div class="innexus-promotion-extended-content">';
-				$promotion_output .= $content;
-			$promotion_output .= '</div>';
+			if(!empty($content))
+			{
+				$promotion_output .= '<div class="innexus-promotion-extended-content">';
+					$promotion_output .= $content;
+				$promotion_output .= '</div>';
+			}
+			
 			
 		//Close Promotion Wrapper
 		$promotion_output .= '</div>';
