@@ -10,7 +10,7 @@
  * Description: Innexus Promotions functionality, allowing auto-cycling of quarterly promotions
  * Author: Innexus by Innereactive
  * Author URI: https://getinnexus.com
- * Version: 1.05.03
+ * Version: 1.05.04
  */
 
 // Exit if accessed directly.
