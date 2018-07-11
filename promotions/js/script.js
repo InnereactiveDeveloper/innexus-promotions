@@ -34,10 +34,12 @@ jQuery(document).ready(function($)
 	
 	//Fire script on load
 	font_scale();
+	//$('.innexus-promotion-line-container').boxfit({multiline: true, maximum_font_size: 35, align_center: false});
 	
 	//Resize Functions
 	$(window).resize(function()
 	{
 		font_scale();
+		//$('.innexus-promotion-line-container').boxfit({multiline: true, maximum_font_size: 35, align_center: false});
 	});
 });

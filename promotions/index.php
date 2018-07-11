@@ -12,6 +12,7 @@
 function XPRO_enqueue() 
 {  
     wp_enqueue_script( 'innexus-promotions-script', plugin_dir_url( __FILE__ ) . 'js/script.js' , array('jquery'), '1.0' );
+    //wp_enqueue_script( 'innexus-promotions-boxfit', plugin_dir_url( __FILE__ ) . 'js/jquery.boxfit.js' , array('jquery'), '1.0' );
     wp_enqueue_style( 'innexus-promotions-style', plugin_dir_url( __FILE__ ) . '/css/style.css' );
     wp_enqueue_style( 'innexus-promotions-google-font', 'https://fonts.googleapis.com/css?family=Bevan' );
 }
