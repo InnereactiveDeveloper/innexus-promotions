@@ -1,16 +1,16 @@
 <?php
 /**
  *
- * @link https://getinnexus.com
+ * @link https://www.getinnexus.com
  * @since 1.0.0
  * @package XPRO
  *
  * Plugin Name: Innexus Promotions
- * Plugin URI: https://getinnexus.com
+ * Plugin URI: https://www.getinnexus.com
  * Description: Innexus Promotions functionality, allowing auto-cycling of quarterly promotions
  * Author: Innexus by Innereactive
- * Author URI: https://getinnexus.com
- * Version: 1.05.06
+ * Author URI: https://www.getinnexus.com
+ * Version: 1.05.07
  */
 
 // Exit if accessed directly.

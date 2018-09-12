@@ -1,8 +1,8 @@
 === Innexus Promotions ===
 Contributors: joshglovak, getinnexus
-Donate link: https://getinnexus.com
+Donate link: https://www.getinnexus.com
 Tags: acf
-Stable tag: 1.05.06
+Stable tag: 1.05.07
 Requires at least: 4.8
 Tested up to: 4.9.6
 
@@ -14,6 +14,9 @@ Adds [promotions] and the relevant interface for controlling quarterly promotion
 Requires ACF Pro to function.
 
 == Changelog ==
+
+= 1.05.07 =
+* Adjusted script enqueueing from header to footer
 
 = 1.05.04 =
 * Added conditional gate for Line 1
