@@ -31,9 +31,6 @@ Requires ACF Pro to function.
 * Added Override for Quarters
 * Added Link target control
 
-= 1.05 =
-* NG+
-
 = 1.02 =
 * Controls and Tweaking
 

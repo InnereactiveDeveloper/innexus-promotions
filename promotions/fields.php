@@ -30,6 +30,9 @@ acf_add_local_field_group(array(
 	'key' => 'group_5a09dcfe7e868',
 	'title' => 'Promotions',
 	'fields' => array(
+		/***********************************
+		Universal Settings
+		***********************************/
 		array(
 			'key' => 'field_5a09fd6e1f1bd',
 			'label' => 'Universal Settings',
@@ -73,6 +76,7 @@ acf_add_local_field_group(array(
 				'q2' => 'Q2',
 				'q3' => 'Q3',
 				'q4' => 'Q4',
+				'fq' => 'FQ',
 			),
 			'allow_null' => 0,
 			'default_value' => 'none',
@@ -105,6 +109,9 @@ acf_add_local_field_group(array(
 			'layout' => 'horizontal',
 			'return_format' => 'value',
 		),
+		/***********************************
+		Quarter 1
+		***********************************/
 		array(
 			'key' => 'field_5a09dd6e1f1bd',
 			'label' => 'Quarter 1',
@@ -397,6 +404,9 @@ acf_add_local_field_group(array(
 			'media_upload' => 1,
 			'delay' => 0,
 		),
+		/***********************************
+		Quarter 2
+		***********************************/
 		array(
 			'key' => 'field_5a09ddac1f1be',
 			'label' => 'Quarter 2',
@@ -689,6 +699,9 @@ acf_add_local_field_group(array(
 			'media_upload' => 1,
 			'delay' => 0,
 		),
+		/***********************************
+		Quarter 3
+		***********************************/
 		array(
 			'key' => 'field_5a09df791f1c2',
 			'label' => 'Quarter 3',
@@ -981,6 +994,9 @@ acf_add_local_field_group(array(
 			'media_upload' => 1,
 			'delay' => 0,
 		),
+		/***********************************
+		Quarter 4
+		***********************************/
 		array(
 			'key' => 'field_5a09df821f1c3',
 			'label' => 'Quarter 4',
@@ -1273,6 +1289,301 @@ acf_add_local_field_group(array(
 			'media_upload' => 1,
 			'delay' => 0,
 		),
+		/***********************************
+		Floating Quarter
+		***********************************/
+		array(
+			'key' => 'field_fq09df821f1c3',
+			'label' => 'Floating Quarter',
+			'name' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'left',
+			'endpoint' => 0,
+		),
+		array(
+			'key' => 'field_fq09e17e82c02',
+			'label' => 'Active Timeframe',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Binds to the selected <strong>Member Signup Quarter</strong> and passes it\'s information to that quarter when that quarter ends.',
+			'new_lines' => '',
+			'esc_html' => 0,
+		),
+		array(
+			'key' => 'field_fq1e7eb40245b',
+			'label' => 'Text Position',
+			'name' => 'fq_text_position',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'top-left' => 'Top Left',
+				'middle-left' => 'Middle Left',
+				'bottom-left' => 'Bottom Left',
+				'top-right' => 'Top Right',
+				'middle-right' => 'Middle Right',
+				'bottom-right' => 'Bottom Right',
+			),
+			'allow_null' => 0,
+			'default_value' => 'middle-left',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_fq1e7fbf0245c',
+			'label' => 'Image Style',
+			'name' => 'fq_image_style',
+			'type' => 'button_group',
+			'instructions' => 'Controls whether the content is full width, or held to one side',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'rectangle' => 'Rectangle',
+				'square' => 'Square',
+			),
+			'allow_null' => 0,
+			'default_value' => 'rectangle',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_fq09dfa81f1c7',
+			'label' => 'Floating Quarter Promotion Image',
+			'name' => 'fq_image',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_fq09dd5f4f1bc',
+			'label' => 'Floating Quarter Promotion Link',
+			'name' => 'fq_link',
+			'type' => 'text',
+			'instructions' => 'Where the promotion will link to.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_fq4e1eb40245b',
+			'label' => 'Link Target',
+			'name' => 'fq_link_target',
+			'type' => 'button_group',
+			'instructions' => 'Controls whether the link opens in a new tab, or the current tab',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'current' => 'Current',
+				'new' => 'New'
+			),
+			'allow_null' => 0,
+			'default_value' => 'current',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_fq09dd4b4f1bb',
+			'label' => 'Floating Quarter Promotion Line 1',
+			'name' => 'fq_line_1',
+			'type' => 'textarea',
+			'instructions' => 'Large text located on the image.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_fq4e8ffb738ad',
+			'label' => 'Line 1 Size',
+			'name' => 'fq_line_1_size',
+			'type' => 'range',
+			'instructions' => 'Default: 30px',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 30,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_fq1e8ffb738a4',
+			'label' => 'Line 1 Color',
+			'name' => 'fq_line_1_color',
+			'type' => 'color_picker',
+			'instructions' => 'Default #666666',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
+		),
+		array(
+			'key' => 'field_fq09dd4b4f1bc',
+			'label' => 'Floating Quarter Promotion Line 2',
+			'name' => 'fq_line_2',
+			'type' => 'textarea',
+			'instructions' => 'Smaller text located on the image.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_fq4e9033738ae',
+			'label' => 'Line 2 Size',
+			'name' => 'fq_line_2_size',
+			'type' => 'range',
+			'instructions' => 'Default: 18px',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 18,
+			'min' => '',
+			'max' => 50,
+			'step' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_fq1e9543a3434',
+			'label' => 'Line 2 Color',
+			'name' => 'fq_line_2_color',
+			'type' => 'color_picker',
+			'instructions' => 'Default #666666',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#666666',
+		),
+		array(
+			'key' => 'field_fq09dd4b4f1bd',
+			'label' => 'Floating Quarter Promotion Extended Content',
+			'name' => 'fq_extended_content',
+			'type' => 'wysiwyg',
+			'instructions' => 'Content that will appear below the promotion for extended information',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_fq09dd4bq4pfc',
+			'label' => 'Floating Quarter Promotion Full Content',
+			'name' => 'fq_full_content',
+			'type' => 'wysiwyg',
+			'instructions' => 'Content that will appear where [promotions_content] shortcode is placed.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
 	),
 	'location' => array(
 		array(
@@ -1330,7 +1641,7 @@ if( function_exists('acf_add_local_field_group') )
 		$quarter_control = get_field('force_quarter', 'option');
 		
 		//Check if the override is active
-		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4')
+		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4' || $quarter_control == 'fq')
 		{
 			$q = $quarter_control;
 		}
@@ -1449,7 +1760,7 @@ if( function_exists('acf_add_local_field_group') )
 		$quarter_control = get_field('force_quarter', 'option');
 		
 		//Check if the override is active
-		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4')
+		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4' || $quarter_control == 'fq')
 		{
 			$q = $quarter_control;
 		}
