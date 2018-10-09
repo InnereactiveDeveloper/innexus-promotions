@@ -80,6 +80,32 @@ acf_add_local_field_group(array(
 			'return_format' => 'value',
 		),
 		array(
+			'key' => 'field_5b1eueb4msqfq',
+			'label' => 'Member Signup Quarter',
+			'name' => 'member_signup_quarter',
+			'type' => 'button_group',
+			'instructions' => 
+				'Controls what quarter the floating quarter (FQ) is attached to, adjust this to match what quarter the member signed up in.
+				<br> When the selected quarter ends, content will be moved from the FQ to the selected quarter.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'q1' => 'Q1',
+				'q2' => 'Q2',
+				'q3' => 'Q3',
+				'q4' => 'Q4',
+			),
+			'allow_null' => 0,
+			'default_value' => 'q4',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
 			'key' => 'field_5a09dd6e1f1bd',
 			'label' => 'Quarter 1',
 			'name' => '',
@@ -339,6 +365,25 @@ acf_add_local_field_group(array(
 			'name' => 'q1_extended_content',
 			'type' => 'wysiwyg',
 			'instructions' => 'Content that will appear below the promotion for extended information',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5a09dd4bq1pfc',
+			'label' => 'Quarter 1 Promotion Full Content',
+			'name' => 'q1_full_content',
+			'type' => 'wysiwyg',
+			'instructions' => 'Content that will appear where [promotions_content] shortcode is placed.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -626,6 +671,25 @@ acf_add_local_field_group(array(
 			'delay' => 0,
 		),
 		array(
+			'key' => 'field_5a09dd4bq2pfc',
+			'label' => 'Quarter 2 Promotion Full Content',
+			'name' => 'q2_full_content',
+			'type' => 'wysiwyg',
+			'instructions' => 'Content that will appear where [promotions_content] shortcode is placed.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
 			'key' => 'field_5a09df791f1c2',
 			'label' => 'Quarter 3',
 			'name' => '',
@@ -885,6 +949,25 @@ acf_add_local_field_group(array(
 			'name' => 'q3_extended_content',
 			'type' => 'wysiwyg',
 			'instructions' => 'Content that will appear below the promotion for extended information',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5a09dd4bq3pfc',
+			'label' => 'Quarter 3 Promotion Full Content',
+			'name' => 'q3_full_content',
+			'type' => 'wysiwyg',
+			'instructions' => 'Content that will appear where [promotions_content] shortcode is placed.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -1171,6 +1254,25 @@ acf_add_local_field_group(array(
 			'media_upload' => 1,
 			'delay' => 0,
 		),
+		array(
+			'key' => 'field_5a09dd4bq4pfc',
+			'label' => 'Quarter 4 Promotion Full Content',
+			'name' => 'q4_full_content',
+			'type' => 'wysiwyg',
+			'instructions' => 'Content that will appear where [promotions_content] shortcode is placed.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
 	),
 	'location' => array(
 		array(
@@ -1315,5 +1417,125 @@ if( function_exists('acf_add_local_field_group') )
 		return $promotion_output;
 	}
 	
+	function promotions_content_func( $atts, $content = "" ) 
+	{
+		//fetch the current month
+		$date = date('n');
+		$q = '';
+		
+		//Determine Which quarter we're in
+		if($date == 1 || $date == 2 || $date == 3)
+		{
+			$q = 'q1';
+		}
+		else if ($date == 4 || $date == 5 || $date == 6)
+		{
+			$q = 'q2';
+		}
+		else if ($date == 7 || $date == 8 || $date == 9)
+		{
+			$q = 'q3';
+		}
+		else if ($date == 10 || $date == 11 || $date == 12)
+		{
+			$q = 'q4';
+		}
+		else
+		{
+			echo 'You broke something. How did you get here?';
+		}
+		
+		//Force Quarter Override
+		$quarter_control = get_field('force_quarter', 'option');
+		
+		//Check if the override is active
+		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4')
+		{
+			$q = $quarter_control;
+		}
+		
+		//Content Settings
+		$text_position 	= 'position ' . get_field($q . '_text_position', 'option');
+		$image_style 	= get_field($q . '_image_style', 'option');
+		$image 			= get_field($q . '_image', 'option');
+		$image 			= $image['sizes']['large'];
+		$line1 			= get_field($q . '_line_1', 'option');
+		$line1_size 	= get_field($q . '_line_1_size', 'option');
+		$line1_size_m 	= $line1_size - 10;
+		$line1_color 	= get_field($q . '_line_1_color', 'option');
+		$line2 			= get_field($q . '_line_2', 'option');
+		$line2_size 	= get_field($q . '_line_2_size', 'option');
+		$line2_size_m 	= $line2_size - 7;
+		$line2_color 	= get_field($q . '_line_2_color', 'option');
+		$content 		= get_field($q . '_extended_content', 'option');
+		$link 			= get_field($q . '_link', 'option');
+		$link_target 	= get_field($q . '_link_target', 'option');
+		$placeholder 	= '';
+		$link_target_output = '';
+		
+		//If there's no image, load the placeholder class to assist in blind placing of the shortcode
+		if(empty($image))
+		{
+			$placeholder = ' placeholder';
+		}
+		
+		if($link_target == 'new')
+		{
+			$link_target_output = 'target="_blank"';
+		}
+		
+		//Blank Promotion Output
+		$promotion_output = '';
+		
+		//Promotion Wrapper
+		$promotion_output .= '<div class="innexus-promotion-wrapper'.$placeholder.'">';
+			
+			//Wrap the full promotion in a link
+			$promotion_output .= '<a href="'.$link.'" '. $link_target_output .'>';
+				$promotion_output .= '<div class="innexus-promotion-container">';
+					
+					//Keep the lines wrapped so we can easily shift the content around
+					$promotion_output .= '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
+						
+						//If Line 1 has content
+						if(!empty($line1))
+						{
+							$promotion_output .= '<h3 class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</h3>';
+						}
+						
+						//If Line 2 has content
+						if(!empty($line2))
+						{
+							$promotion_output .= '<div class="innexus-promotion-line-2" data-desktop="'.$line2_size.'" data-mobile='.$line2_size_m.' style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
+						}
+					
+					$promotion_output .= '</div>';
+					
+					//Only output img tag if there is an image mapped
+					if(!empty($image))
+					{
+						$promotion_output .= '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
+					}
+					
+				$promotion_output .= '</div>';
+			$promotion_output .= '</a>';
+			
+			//Keep extended content below the promotion
+			if(!empty($content))
+			{
+				$promotion_output .= '<div class="innexus-promotion-extended-content">';
+					$promotion_output .= $content;
+				$promotion_output .= '</div>';
+			}
+			
+			
+		//Close Promotion Wrapper
+		$promotion_output .= '</div>';
+		
+		//Return the assembled promotion
+		return $promotion_output;
+	}
+	
+	add_shortcode( 'promotions_content', 'promotions_content_func' );
 	add_shortcode( 'promotions', 'promotions_func' );
 }
