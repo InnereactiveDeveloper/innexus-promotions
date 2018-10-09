@@ -109,6 +109,31 @@ acf_add_local_field_group(array(
 			'layout' => 'horizontal',
 			'return_format' => 'value',
 		),
+		array(
+			'key' => 'field_5b1eueb4cmtfq',
+			'label' => 'Content Migration Trigger',
+			'name' => 'content_migration_trigger',
+			'type' => 'button_group',
+			'instructions' => 
+				'Resets the migration functionality.<br> 
+				While set to <strong>Reset</strong> the floating quarter WILL migrate under appropriate conditions.<br>
+				While set to <strong>Updated</strong> the underlying function WILL NOT migrate content over, this is to prevent unnecessary runs of the function',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'reset' => 'Reset',
+				'updated' => 'Updated'
+			),
+			'allow_null' => 0,
+			'default_value' => 'reset',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
 		/***********************************
 		Quarter 1
 		***********************************/
@@ -1609,6 +1634,148 @@ acf_add_local_field_group(array(
 //Shortcode
 if( function_exists('acf_add_local_field_group') )
 {
+	function promotions_quarter_migrate()
+	{
+		//fetch the current month
+		$date = date('n');
+		$q = '';
+		
+		//Determine Which quarter we're in
+		if($date == 1 || $date == 2 || $date == 3)
+		{
+			$q = 'q1';
+		}
+		else if ($date == 4 || $date == 5 || $date == 6)
+		{
+			$q = 'q2';
+		}
+		else if ($date == 7 || $date == 8 || $date == 9)
+		{
+			$q = 'q3';
+		}
+		else if ($date == 10 || $date == 11 || $date == 12)
+		{
+			$q = 'q4';
+		}
+		else
+		{
+			echo 'You broke something. How did you get here?';
+		}
+		
+		//Force Quarter Override
+		$quarter_control = get_field('force_quarter', 'option');
+		
+		//Check if the override is active
+		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4' || $quarter_control == 'fq')
+		{
+			$q = $quarter_control;
+		}
+		
+		//Floating Quarter Content Settings
+		$fq_cmt			 	= get_field('content_migration_trigger', 'option');
+		$fq_text_position 	= get_field('fq_text_position', 'option');
+		$fq_image_style 	= get_field('fq_image_style', 'option');
+		$fq_image 			= get_field('fq_image', 'option');
+		$fq_line1 			= get_field('fq_line_1', 'option');
+		$fq_line1_size 		= get_field('fq_line_1_size', 'option');
+		$fq_line1_color 	= get_field('fq_line_1_color', 'option');
+		$fq_line2 			= get_field('fq_line_2', 'option');
+		$fq_line2_size 		= get_field('fq_line_2_size', 'option');
+		$fq_line2_color 	= get_field('fq_line_2_color', 'option');
+		$fq_content 		= get_field('fq_extended_content', 'option');
+		$fq_full_content 	= get_field('fq_full_content', 'option');
+		$fq_link 			= get_field('fq_link', 'option');
+		$fq_link_target 	= get_field('fq_link_target', 'option');
+		
+		//The quarter the member signed up in
+		$msq = get_field('member_signup_quarter', 'option');
+		
+		//Make sure the reset is armed before running.
+		if($fq_cmt == 'reset')
+		{
+			//Move FQ to Q4
+			if($q == 'q1' && $msq == 'q4')
+			{
+				update_field('content_migration_trigger', 'updated' , 'option');
+				update_field($msq . '_text_position', $fq_text_position ,'option');
+				update_field($msq . '_image_style', $fq_image_style ,'option');
+				update_field($msq . '_image', $fq_image ,'option');
+				update_field($msq . '_line_1', $fq_line1 ,'option');
+				update_field($msq . '_line_1_size', $fq_line1_size ,'option');
+				update_field($msq . '_line_1_color', $fq_line1_color ,'option');
+				update_field($msq . '_line_2', $fq_line2 ,'option');
+				update_field($msq . '_line_2_size', $fq_line2_size ,'option');
+				update_field($msq . '_line_2_color', $fq_line2_color ,'option');
+				update_field($msq . '_extended_content', $fq_content ,'option');
+				update_field($msq . '_full_content', $fq_full_content ,'option');
+				update_field($msq . '_link', $fq_link ,'option');
+				update_field($msq . '_link_target', $fq_link_target ,'option');
+			}
+			
+			//Move FQ to Q1
+			if($q == 'q2' && $msq == 'q1')
+			{
+				
+				update_field('content_migration_trigger', 'updated' , 'option');
+				update_field($msq . '_text_position', $fq_text_position ,'option');
+				update_field($msq . '_image_style', $fq_image_style ,'option');
+				update_field($msq . '_image', $fq_image ,'option');
+				update_field($msq . '_line_1', $fq_line1 ,'option');
+				update_field($msq . '_line_1_size', $fq_line1_size ,'option');
+				update_field($msq . '_line_1_color', $fq_line1_color ,'option');
+				update_field($msq . '_line_2', $fq_line2 ,'option');
+				update_field($msq . '_line_2_size', $fq_line2_size ,'option');
+				update_field($msq . '_line_2_color', $fq_line2_color ,'option');
+				update_field($msq . '_extended_content', $fq_content ,'option');
+				update_field($msq . '_full_content', $fq_full_content ,'option');
+				update_field($msq . '_link', $fq_link ,'option');
+				update_field($msq . '_link_target', $fq_link_target ,'option');
+			}
+			
+			//Move FQ to Q2
+			if($q == 'q3' && $msq == 'q2')
+			{
+				
+				update_field('content_migration_trigger', 'updated' , 'option');
+				update_field($msq . '_text_position', $fq_text_position ,'option');
+				update_field($msq . '_image_style', $fq_image_style ,'option');
+				update_field($msq . '_image', $fq_image ,'option');
+				update_field($msq . '_line_1', $fq_line1 ,'option');
+				update_field($msq . '_line_1_size', $fq_line1_size ,'option');
+				update_field($msq . '_line_1_color', $fq_line1_color ,'option');
+				update_field($msq . '_line_2', $fq_line2 ,'option');
+				update_field($msq . '_line_2_size', $fq_line2_size ,'option');
+				update_field($msq . '_line_2_color', $fq_line2_color ,'option');
+				update_field($msq . '_extended_content', $fq_content ,'option');
+				update_field($msq . '_full_content', $fq_full_content ,'option');
+				update_field($msq . '_link', $fq_link ,'option');
+				update_field($msq . '_link_target', $fq_link_target ,'option');
+			}
+			
+			//Move FQ to Q3
+			if($q == 'q4' && $msq == 'q3')
+			{
+				
+				update_field('content_migration_trigger', 'updated' , 'option');
+				update_field($msq . '_text_position', $fq_text_position ,'option');
+				update_field($msq . '_image_style', $fq_image_style ,'option');
+				update_field($msq . '_image', $fq_image ,'option');
+				update_field($msq . '_line_1', $fq_line1 ,'option');
+				update_field($msq . '_line_1_size', $fq_line1_size ,'option');
+				update_field($msq . '_line_1_color', $fq_line1_color ,'option');
+				update_field($msq . '_line_2', $fq_line2 ,'option');
+				update_field($msq . '_line_2_size', $fq_line2_size ,'option');
+				update_field($msq . '_line_2_color', $fq_line2_color ,'option');
+				update_field($msq . '_extended_content', $fq_content ,'option');
+				update_field($msq . '_full_content', $fq_full_content ,'option');
+				update_field($msq . '_link', $fq_link ,'option');
+				update_field($msq . '_link_target', $fq_link_target ,'option');
+			}
+		}
+		
+		
+	}
+	
 	function promotions_func( $atts, $content = "" ) 
 	{
 		//fetch the current month
@@ -1724,6 +1891,8 @@ if( function_exists('acf_add_local_field_group') )
 		//Close Promotion Wrapper
 		$promotion_output .= '</div>';
 		
+		promotions_quarter_migrate();
+		
 		//Return the assembled promotion
 		return $promotion_output;
 	}
@@ -1759,6 +1928,9 @@ if( function_exists('acf_add_local_field_group') )
 		//Force Quarter Override
 		$quarter_control = get_field('force_quarter', 'option');
 		
+		//The quarter the member signed up in
+		$member_signup_quarter = get_field('member_signup_quarter', 'option');
+		
 		//Check if the override is active
 		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4' || $quarter_control == 'fq')
 		{
@@ -1766,82 +1938,20 @@ if( function_exists('acf_add_local_field_group') )
 		}
 		
 		//Content Settings
-		$text_position 	= 'position ' . get_field($q . '_text_position', 'option');
-		$image_style 	= get_field($q . '_image_style', 'option');
-		$image 			= get_field($q . '_image', 'option');
-		$image 			= $image['sizes']['large'];
-		$line1 			= get_field($q . '_line_1', 'option');
-		$line1_size 	= get_field($q . '_line_1_size', 'option');
-		$line1_size_m 	= $line1_size - 10;
-		$line1_color 	= get_field($q . '_line_1_color', 'option');
-		$line2 			= get_field($q . '_line_2', 'option');
-		$line2_size 	= get_field($q . '_line_2_size', 'option');
-		$line2_size_m 	= $line2_size - 7;
-		$line2_color 	= get_field($q . '_line_2_color', 'option');
-		$content 		= get_field($q . '_extended_content', 'option');
-		$link 			= get_field($q . '_link', 'option');
-		$link_target 	= get_field($q . '_link_target', 'option');
-		$placeholder 	= '';
-		$link_target_output = '';
-		
-		//If there's no image, load the placeholder class to assist in blind placing of the shortcode
-		if(empty($image))
-		{
-			$placeholder = ' placeholder';
-		}
-		
-		if($link_target == 'new')
-		{
-			$link_target_output = 'target="_blank"';
-		}
+		$full_content 	= get_field($q . '_full_content', 'option');
 		
 		//Blank Promotion Output
 		$promotion_output = '';
 		
 		//Promotion Wrapper
-		$promotion_output .= '<div class="innexus-promotion-wrapper'.$placeholder.'">';
-			
-			//Wrap the full promotion in a link
-			$promotion_output .= '<a href="'.$link.'" '. $link_target_output .'>';
-				$promotion_output .= '<div class="innexus-promotion-container">';
-					
-					//Keep the lines wrapped so we can easily shift the content around
-					$promotion_output .= '<div class="innexus-promotion-line-container ' . $image_style .' '. $text_position . '">';
-						
-						//If Line 1 has content
-						if(!empty($line1))
-						{
-							$promotion_output .= '<h3 class="innexus-promotion-line-1" data-desktop="'.$line1_size.'" data-mobile='.$line1_size_m.' style="font-size:'.$line1_size.'px; color: '.$line1_color.';">'.$line1.'</h3>';
-						}
-						
-						//If Line 2 has content
-						if(!empty($line2))
-						{
-							$promotion_output .= '<div class="innexus-promotion-line-2" data-desktop="'.$line2_size.'" data-mobile='.$line2_size_m.' style="font-size:'.$line2_size.'px; color: '.$line2_color.';">'.$line2.'</div>';
-						}
-					
-					$promotion_output .= '</div>';
-					
-					//Only output img tag if there is an image mapped
-					if(!empty($image))
-					{
-						$promotion_output .= '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
-					}
-					
-				$promotion_output .= '</div>';
-			$promotion_output .= '</a>';
-			
-			//Keep extended content below the promotion
-			if(!empty($content))
-			{
-				$promotion_output .= '<div class="innexus-promotion-extended-content">';
-					$promotion_output .= $content;
-				$promotion_output .= '</div>';
-			}
-			
+		$promotion_output .= '<div class="innexus-promotion-content-wrapper">';
+		
+			$promotion_output .= $full_content;
 			
 		//Close Promotion Wrapper
 		$promotion_output .= '</div>';
+		
+		promotions_quarter_migrate();
 		
 		//Return the assembled promotion
 		return $promotion_output;
