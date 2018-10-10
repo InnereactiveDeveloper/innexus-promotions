@@ -118,7 +118,7 @@ acf_add_local_field_group(array(
 				'Controls the migration functionality.<br> 
 				While set to <strong>Active</strong> the floating quarter WILL migrate under appropriate conditions.<br>
 				While set to <strong>Inactive</strong> the floating quarter WILL NOT migrate content, this is to prevent unnecessary runs of the function.<br>
-				After the content is migrated, this functionality will switch to deactivated to prevent display issues.',
+				After the content is migrated, this toggle will switch to deactivated to prevent display issues.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
