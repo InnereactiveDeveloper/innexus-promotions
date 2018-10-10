@@ -50,18 +50,43 @@ acf_add_local_field_group(array(
 			'endpoint' => 0,
 		),
 		array(
+			'key' => 'field_5a09e12882ins',
+			'label' => '',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '<h3 style="margin-top: 0;">Instructions</h3>
+			<strong><i>This plugin provides two shortcodes to be placed on the site.</i></strong>
+			<br>
+			<br>
+			<strong>[promotions]</strong> - Place in highly visible location(s) to encourage users to view whatever promotions the site is running.
+			<br>
+			<br>
+			<strong>[promotions_content]</strong> - Place on the equivalent of a promotions page, it outputs full length content describing any promotions that are designed to rotate on a quarterly basis. Other promotions can also be placed above and below it, as it is intended to be flexible in it\'s location and placement.
+			<br>
+			<br><strong>Q1</strong> - Jan, Feb, Mar.
+			<br><strong>Q2</strong> - Apr, May, Jun.
+			<br><strong>Q3</strong> - Jul, Aug, Sep.
+			<br><strong>Q4</strong> - Oct, Nov, Dec.
+			<br><strong>FQ</strong> - Floating Quarter, no date based attachment.
+			<br>',
+			'new_lines' => '',
+			'esc_html' => 0,
+		),
+		array(
 			'key' => 'field_5b1eueb40215b',
 			'label' => 'Force Quarter',
 			'name' => 'force_quarter',
 			'type' => 'button_group',
 			'instructions' => 
 				'Forces a quarter to be active regardless of the current date to allow for review of placed promotions.
-				<br>
-				<br> Q1 - Jan, Feb, Mar. 
-				<br> Q2 - Apr, May, Jun. 
-				<br> Q3 - Jul, Aug, Sep. 
-				<br> Q4 - Oct, Nov, Dec. 
-				<br>
 				<br> ALWAYS set this toggle back to <strong>Auto</strong> when done testing!',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -115,10 +140,15 @@ acf_add_local_field_group(array(
 			'name' => 'content_migration_trigger',
 			'type' => 'button_group',
 			'instructions' => 
-				'Controls the migration functionality.<br> 
-				While set to <strong>Active</strong> the floating quarter WILL migrate under appropriate conditions.<br>
-				While set to <strong>Inactive</strong> the floating quarter WILL NOT migrate content, this is to prevent unnecessary runs of the function.<br>
-				After the content is migrated, this toggle will switch to deactivated to prevent display issues.',
+				'Controls the migration functionality.
+				<br>
+				<br>
+				While set to <strong>Active</strong> the floating quarter WILL migrate under appropriate conditions.
+				<br>
+				While set to <strong>Inactive</strong> the floating quarter WILL NOT migrate content, this is to prevent unnecessary runs of the function.
+				<br>
+				<br>
+				<strong>Note:</strong> After the content is migrated, this toggle will switch to <strong>Inactive</strong> to prevent display issues.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
