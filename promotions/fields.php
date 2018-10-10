@@ -115,9 +115,10 @@ acf_add_local_field_group(array(
 			'name' => 'content_migration_trigger',
 			'type' => 'button_group',
 			'instructions' => 
-				'Resets the migration functionality.<br> 
-				While set to <strong>Reset</strong> the floating quarter WILL migrate under appropriate conditions.<br>
-				While set to <strong>Updated</strong> the underlying function WILL NOT migrate content over, this is to prevent unnecessary runs of the function',
+				'Controls the migration functionality.<br> 
+				While set to <strong>Active</strong> the floating quarter WILL migrate under appropriate conditions.<br>
+				While set to <strong>Inactive</strong> the floating quarter WILL NOT migrate content, this is to prevent unnecessary runs of the function.<br>
+				After the content is migrated, this functionality will switch to deactivated to prevent display issues.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -126,8 +127,8 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
-				'reset' => 'Reset',
-				'updated' => 'Updated'
+				'active' => 'Active',
+				'inactive' => 'Inactive'
 			),
 			'allow_null' => 0,
 			'default_value' => 'reset',
@@ -1665,111 +1666,320 @@ if( function_exists('acf_add_local_field_group') )
 		//Force Quarter Override
 		$quarter_control = get_field('force_quarter', 'option');
 		
+		//The quarter the member signed up in
+		$msq = get_field('member_signup_quarter', 'option');
+		
 		//Check if the override is active
 		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4' || $quarter_control == 'fq')
 		{
 			$q = $quarter_control;
 		}
 		
-		//Floating Quarter Content Settings
-		$fq_cmt			 	= get_field('content_migration_trigger', 'option');
-		$fq_text_position 	= get_field('fq_text_position', 'option');
-		$fq_image_style 	= get_field('fq_image_style', 'option');
-		$fq_image 			= get_field('fq_image', 'option');
-		$fq_line1 			= get_field('fq_line_1', 'option');
-		$fq_line1_size 		= get_field('fq_line_1_size', 'option');
-		$fq_line1_color 	= get_field('fq_line_1_color', 'option');
-		$fq_line2 			= get_field('fq_line_2', 'option');
-		$fq_line2_size 		= get_field('fq_line_2_size', 'option');
-		$fq_line2_color 	= get_field('fq_line_2_color', 'option');
-		$fq_content 		= get_field('fq_extended_content', 'option');
-		$fq_full_content 	= get_field('fq_full_content', 'option');
-		$fq_link 			= get_field('fq_link', 'option');
-		$fq_link_target 	= get_field('fq_link_target', 'option');
-		
-		//The quarter the member signed up in
-		$msq = get_field('member_signup_quarter', 'option');
-		
 		//Make sure the reset is armed before running.
-		if($fq_cmt == 'reset')
+		if($fq_cmt == 'active')
 		{
+		
+			//Floating Quarter Content Settings
+			$fq_cmt			 	= get_field('content_migration_trigger', 'option');
+			$fq_text_position 	= get_field('fq_text_position', 'option');
+			$fq_image_style 	= get_field('fq_image_style', 'option');
+			$fq_image 			= get_field('fq_image', 'option');
+			$fq_line1 			= get_field('fq_line_1', 'option');
+			$fq_line1_size 		= get_field('fq_line_1_size', 'option');
+			$fq_line1_color 	= get_field('fq_line_1_color', 'option');
+			$fq_line2 			= get_field('fq_line_2', 'option');
+			$fq_line2_size 		= get_field('fq_line_2_size', 'option');
+			$fq_line2_color 	= get_field('fq_line_2_color', 'option');
+			$fq_content 		= get_field('fq_extended_content', 'option');
+			$fq_full_content 	= get_field('fq_full_content', 'option');
+			$fq_link 			= get_field('fq_link', 'option');
+			$fq_link_target 	= get_field('fq_link_target', 'option');
+		
 			//Move FQ to Q4
 			if($q == 'q1' && $msq == 'q4')
 			{
-				update_field('content_migration_trigger', 'updated' , 'option');
-				update_field($msq . '_text_position', $fq_text_position ,'option');
-				update_field($msq . '_image_style', $fq_image_style ,'option');
-				update_field($msq . '_image', $fq_image ,'option');
-				update_field($msq . '_line_1', $fq_line1 ,'option');
-				update_field($msq . '_line_1_size', $fq_line1_size ,'option');
-				update_field($msq . '_line_1_color', $fq_line1_color ,'option');
-				update_field($msq . '_line_2', $fq_line2 ,'option');
-				update_field($msq . '_line_2_size', $fq_line2_size ,'option');
-				update_field($msq . '_line_2_color', $fq_line2_color ,'option');
-				update_field($msq . '_extended_content', $fq_content ,'option');
-				update_field($msq . '_full_content', $fq_full_content ,'option');
-				update_field($msq . '_link', $fq_link ,'option');
-				update_field($msq . '_link_target', $fq_link_target ,'option');
+				update_field('content_migration_trigger', 'inactive' , 'option');
+				
+				if(!empty($fq_text_position))
+				{
+					update_field($msq . '_text_position', $fq_text_position ,'option');
+				}
+				
+				if(!empty($fq_image_style))
+				{
+					update_field($msq . '_image_style', $fq_image_style ,'option');
+				}
+				
+				if(!empty($fq_image))
+				{
+					update_field($msq . '_image', $fq_image ,'option');
+				}
+				
+				if(!empty($fq_line1))
+				{
+					update_field($msq . '_line_1', $fq_line1 ,'option');
+				}
+				
+				if(!empty($fq_line1_size))
+				{
+					update_field($msq . '_line_1_size', $fq_line1_size ,'option');
+				}
+				
+				if(!empty($fq_line1_color))
+				{
+					update_field($msq . '_line_1_color', $fq_line1_color ,'option');
+				}
+				
+				if(!empty($fq_line2))
+				{
+					update_field($msq . '_line_2', $fq_line2 ,'option');
+				}
+				
+				if(!empty($fq_line2_size))
+				{
+					update_field($msq . '_line_2_size', $fq_line2_size ,'option');
+				}
+				
+				if(!empty($fq_line2_color))
+				{
+					update_field($msq . '_line_2_color', $fq_line2_color ,'option');
+				}
+				
+				if(!empty($fq_content))
+				{
+					update_field($msq . '_extended_content', $fq_content ,'option');
+				}
+				
+				if(!empty($fq_full_content))
+				{
+					update_field($msq . '_full_content', $fq_full_content ,'option');
+				}
+				
+				if(!empty($fq_link))
+				{
+					update_field($msq . '_link', $fq_link ,'option');
+				}
+				
+				if(!empty($fq_link_target))
+				{
+					update_field($msq . '_link_target', $fq_link_target ,'option');
+				}
 			}
 			
 			//Move FQ to Q1
 			if($q == 'q2' && $msq == 'q1')
 			{
 				
-				update_field('content_migration_trigger', 'updated' , 'option');
-				update_field($msq . '_text_position', $fq_text_position ,'option');
-				update_field($msq . '_image_style', $fq_image_style ,'option');
-				update_field($msq . '_image', $fq_image ,'option');
-				update_field($msq . '_line_1', $fq_line1 ,'option');
-				update_field($msq . '_line_1_size', $fq_line1_size ,'option');
-				update_field($msq . '_line_1_color', $fq_line1_color ,'option');
-				update_field($msq . '_line_2', $fq_line2 ,'option');
-				update_field($msq . '_line_2_size', $fq_line2_size ,'option');
-				update_field($msq . '_line_2_color', $fq_line2_color ,'option');
-				update_field($msq . '_extended_content', $fq_content ,'option');
-				update_field($msq . '_full_content', $fq_full_content ,'option');
-				update_field($msq . '_link', $fq_link ,'option');
-				update_field($msq . '_link_target', $fq_link_target ,'option');
+				update_field('content_migration_trigger', 'inactive' , 'option');
+				
+				if(!empty($fq_text_position))
+				{
+					update_field($msq . '_text_position', $fq_text_position ,'option');
+				}
+				
+				if(!empty($fq_image_style))
+				{
+					update_field($msq . '_image_style', $fq_image_style ,'option');
+				}
+				
+				if(!empty($fq_image))
+				{
+					update_field($msq . '_image', $fq_image ,'option');
+				}
+				
+				if(!empty($fq_line1))
+				{
+					update_field($msq . '_line_1', $fq_line1 ,'option');
+				}
+				
+				if(!empty($fq_line1_size))
+				{
+					update_field($msq . '_line_1_size', $fq_line1_size ,'option');
+				}
+				
+				if(!empty($fq_line1_color))
+				{
+					update_field($msq . '_line_1_color', $fq_line1_color ,'option');
+				}
+				
+				if(!empty($fq_line2))
+				{
+					update_field($msq . '_line_2', $fq_line2 ,'option');
+				}
+				
+				if(!empty($fq_line2_size))
+				{
+					update_field($msq . '_line_2_size', $fq_line2_size ,'option');
+				}
+				
+				if(!empty($fq_line2_color))
+				{
+					update_field($msq . '_line_2_color', $fq_line2_color ,'option');
+				}
+				
+				if(!empty($fq_content))
+				{
+					update_field($msq . '_extended_content', $fq_content ,'option');
+				}
+				
+				if(!empty($fq_full_content))
+				{
+					update_field($msq . '_full_content', $fq_full_content ,'option');
+				}
+				
+				if(!empty($fq_link))
+				{
+					update_field($msq . '_link', $fq_link ,'option');
+				}
+				
+				if(!empty($fq_link_target))
+				{
+					update_field($msq . '_link_target', $fq_link_target ,'option');
+				}
 			}
 			
 			//Move FQ to Q2
 			if($q == 'q3' && $msq == 'q2')
 			{
 				
-				update_field('content_migration_trigger', 'updated' , 'option');
-				update_field($msq . '_text_position', $fq_text_position ,'option');
-				update_field($msq . '_image_style', $fq_image_style ,'option');
-				update_field($msq . '_image', $fq_image ,'option');
-				update_field($msq . '_line_1', $fq_line1 ,'option');
-				update_field($msq . '_line_1_size', $fq_line1_size ,'option');
-				update_field($msq . '_line_1_color', $fq_line1_color ,'option');
-				update_field($msq . '_line_2', $fq_line2 ,'option');
-				update_field($msq . '_line_2_size', $fq_line2_size ,'option');
-				update_field($msq . '_line_2_color', $fq_line2_color ,'option');
-				update_field($msq . '_extended_content', $fq_content ,'option');
-				update_field($msq . '_full_content', $fq_full_content ,'option');
-				update_field($msq . '_link', $fq_link ,'option');
-				update_field($msq . '_link_target', $fq_link_target ,'option');
+				update_field('content_migration_trigger', 'inactive' , 'option');
+				
+				if(!empty($fq_text_position))
+				{
+					update_field($msq . '_text_position', $fq_text_position ,'option');
+				}
+				
+				if(!empty($fq_image_style))
+				{
+					update_field($msq . '_image_style', $fq_image_style ,'option');
+				}
+				
+				if(!empty($fq_image))
+				{
+					update_field($msq . '_image', $fq_image ,'option');
+				}
+				
+				if(!empty($fq_line1))
+				{
+					update_field($msq . '_line_1', $fq_line1 ,'option');
+				}
+				
+				if(!empty($fq_line1_size))
+				{
+					update_field($msq . '_line_1_size', $fq_line1_size ,'option');
+				}
+				
+				if(!empty($fq_line1_color))
+				{
+					update_field($msq . '_line_1_color', $fq_line1_color ,'option');
+				}
+				
+				if(!empty($fq_line2))
+				{
+					update_field($msq . '_line_2', $fq_line2 ,'option');
+				}
+				
+				if(!empty($fq_line2_size))
+				{
+					update_field($msq . '_line_2_size', $fq_line2_size ,'option');
+				}
+				
+				if(!empty($fq_line2_color))
+				{
+					update_field($msq . '_line_2_color', $fq_line2_color ,'option');
+				}
+				
+				if(!empty($fq_content))
+				{
+					update_field($msq . '_extended_content', $fq_content ,'option');
+				}
+				
+				if(!empty($fq_full_content))
+				{
+					update_field($msq . '_full_content', $fq_full_content ,'option');
+				}
+				
+				if(!empty($fq_link))
+				{
+					update_field($msq . '_link', $fq_link ,'option');
+				}
+				
+				if(!empty($fq_link_target))
+				{
+					update_field($msq . '_link_target', $fq_link_target ,'option');
+				}
 			}
 			
 			//Move FQ to Q3
 			if($q == 'q4' && $msq == 'q3')
 			{
 				
-				update_field('content_migration_trigger', 'updated' , 'option');
-				update_field($msq . '_text_position', $fq_text_position ,'option');
-				update_field($msq . '_image_style', $fq_image_style ,'option');
-				update_field($msq . '_image', $fq_image ,'option');
-				update_field($msq . '_line_1', $fq_line1 ,'option');
-				update_field($msq . '_line_1_size', $fq_line1_size ,'option');
-				update_field($msq . '_line_1_color', $fq_line1_color ,'option');
-				update_field($msq . '_line_2', $fq_line2 ,'option');
-				update_field($msq . '_line_2_size', $fq_line2_size ,'option');
-				update_field($msq . '_line_2_color', $fq_line2_color ,'option');
-				update_field($msq . '_extended_content', $fq_content ,'option');
-				update_field($msq . '_full_content', $fq_full_content ,'option');
-				update_field($msq . '_link', $fq_link ,'option');
-				update_field($msq . '_link_target', $fq_link_target ,'option');
+				update_field('content_migration_trigger', 'inactive' , 'option');
+				
+				if(!empty($fq_text_position))
+				{
+					update_field($msq . '_text_position', $fq_text_position ,'option');
+				}
+				
+				if(!empty($fq_image_style))
+				{
+					update_field($msq . '_image_style', $fq_image_style ,'option');
+				}
+				
+				if(!empty($fq_image))
+				{
+					update_field($msq . '_image', $fq_image ,'option');
+				}
+				
+				if(!empty($fq_line1))
+				{
+					update_field($msq . '_line_1', $fq_line1 ,'option');
+				}
+				
+				if(!empty($fq_line1_size))
+				{
+					update_field($msq . '_line_1_size', $fq_line1_size ,'option');
+				}
+				
+				if(!empty($fq_line1_color))
+				{
+					update_field($msq . '_line_1_color', $fq_line1_color ,'option');
+				}
+				
+				if(!empty($fq_line2))
+				{
+					update_field($msq . '_line_2', $fq_line2 ,'option');
+				}
+				
+				if(!empty($fq_line2_size))
+				{
+					update_field($msq . '_line_2_size', $fq_line2_size ,'option');
+				}
+				
+				if(!empty($fq_line2_color))
+				{
+					update_field($msq . '_line_2_color', $fq_line2_color ,'option');
+				}
+				
+				if(!empty($fq_content))
+				{
+					update_field($msq . '_extended_content', $fq_content ,'option');
+				}
+				
+				if(!empty($fq_full_content))
+				{
+					update_field($msq . '_full_content', $fq_full_content ,'option');
+				}
+				
+				if(!empty($fq_link))
+				{
+					update_field($msq . '_link', $fq_link ,'option');
+				}
+				
+				if(!empty($fq_link_target))
+				{
+					update_field($msq . '_link_target', $fq_link_target ,'option');
+				}
 			}
 		}
 		
