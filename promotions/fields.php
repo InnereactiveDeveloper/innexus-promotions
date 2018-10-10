@@ -1669,6 +1669,9 @@ if( function_exists('acf_add_local_field_group') )
 		//The quarter the member signed up in
 		$msq = get_field('member_signup_quarter', 'option');
 		
+		//Floating Quarter Content Migration Trigger
+		$fq_cmt	= get_field('content_migration_trigger', 'option');
+		
 		//Check if the override is active
 		if($quarter_control == 'q1' || $quarter_control == 'q2' || $quarter_control == 'q3' || $quarter_control == 'q4' || $quarter_control == 'fq')
 		{
@@ -1680,7 +1683,6 @@ if( function_exists('acf_add_local_field_group') )
 		{
 		
 			//Floating Quarter Content Settings
-			$fq_cmt			 	= get_field('content_migration_trigger', 'option');
 			$fq_text_position 	= get_field('fq_text_position', 'option');
 			$fq_image_style 	= get_field('fq_image_style', 'option');
 			$fq_image 			= get_field('fq_image', 'option');
