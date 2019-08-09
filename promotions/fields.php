@@ -2059,7 +2059,7 @@ if( function_exists('acf_add_local_field_group') )
 		$text_position 	= 'position ' . get_field($q . '_text_position', 'option');
 		$image_style 	= get_field($q . '_image_style', 'option');
 		$image 			= get_field($q . '_image', 'option');
-		$image 			= $image['sizes']['large'];
+		$image 			= $image['sizes']['1980'];
 		$line1 			= get_field($q . '_line_1', 'option');
 		$line1_size 	= get_field($q . '_line_1_size', 'option');
 		$line1_size_m 	= $line1_size - 10;
@@ -2115,7 +2115,7 @@ if( function_exists('acf_add_local_field_group') )
 					//Only output img tag if there is an image mapped
 					if(!empty($image))
 					{
-						$promotion_output .= '<img src=" '.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
+						$promotion_output .= '<img src="'.$image.'" title="'.$line1.'" alt="'.$line1.'"/>';
 					}
 					
 				$promotion_output .= '</div>';
@@ -2133,7 +2133,7 @@ if( function_exists('acf_add_local_field_group') )
 		//Close Promotion Wrapper
 		$promotion_output .= '</div>';
 		
-		promotions_quarter_migrate();
+		//promotions_quarter_migrate();
 		
 		//Return the assembled promotion
 		return $promotion_output;
